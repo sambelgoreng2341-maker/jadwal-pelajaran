@@ -1,0 +1,6 @@
+{
+  "name": "Jadwal Harian Santri IIQBS - Kiosk & Smart Display",
+  "description": "Display jadwal pelajaran harian santri pondok pesantren dengan bel notifikasi pergantian jam otomatis, sinkronisasi real-time server pusat, anti mati layar (wake lock), dan akses offline.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
