@@ -587,7 +587,7 @@ export const AdminScheduleModal: React.FC<AdminScheduleModalProps> = ({
                     onChange={(e) => setEditDay(e.target.value as any)}
                     className="bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white font-bold"
                   >
-                    {['SENIN', 'SELASA', 'RABU', 'KAMIS', 'JUMAT', 'SABTU', 'AHAD'].map((d) => (
+                    {['SENIN', 'SELASA', 'RABU', 'KAMIS', 'SABTU'].map((d) => (
                       <option key={d} value={d}>
                         {d}
                       </option>

@@ -103,14 +103,7 @@ export const DEFAULT_SCHEDULES: Record<'grade1_2' | 'grade3', GradeSchedule> = {
         { id: 'g1-thu-7', periodNumber: 7, startTime: '12:20', endTime: '13:00', subject: 'Tazkiyah', teacher: 'Ust Rusydan', type: 'lesson' },
         { id: 'g1-thu-l', periodNumber: null, startTime: '12:30', endTime: '13:00', subject: 'HAVE A LUNCH (Makan Siang)', teacher: 'Dapur Santri', type: 'lunch' },
       ],
-      JUMAT: [
-        { id: 'g1-fri-1', periodNumber: 1, startTime: '05:45', endTime: '07:00', subject: "Kajian Fiqih & Sunnah Jum'at", teacher: 'Ust Azzam', type: 'activity' },
-        { id: 'g1-fri-2', periodNumber: 2, startTime: '07:30', endTime: '09:00', subject: "Ro'an / Kerja Bakti Kebersihan", teacher: 'Pembina Asrama', type: 'activity' },
-        { id: 'g1-fri-b', periodNumber: null, startTime: '09:00', endTime: '10:30', subject: 'Persiapan Diri & Tilawah Surah Al-Kahf', teacher: 'Mandiri', type: 'break' },
-        { id: 'g1-fri-p', periodNumber: null, startTime: '11:30', endTime: '12:45', subject: "SHOLAT JUM'AT BERJAMAAH", teacher: 'Khatib & Imam', type: 'prayer' },
-        { id: 'g1-fri-l', periodNumber: null, startTime: '12:45', endTime: '13:30', subject: 'Makan Siang Bersama (Ghaffar)', teacher: 'Dapur Santri', type: 'lunch' },
-        { id: 'g1-fri-3', periodNumber: 3, startTime: '16:00', endTime: '17:15', subject: "Halaqah Qur'an & Doa Sore", teacher: 'Asatidz', type: 'activity' },
-      ],
+      JUMAT: [],
       SABTU: [
         { id: 'g1-sat-1', periodNumber: 1, startTime: '07:30', endTime: '08:10', subject: 'B. Indonesia', teacher: 'Fajar E. S.Pd', type: 'lesson' },
         { id: 'g1-sat-2', periodNumber: 2, startTime: '08:10', endTime: '08:50', subject: 'B. Indonesia', teacher: 'Fajar E. S.Pd', type: 'lesson' },
@@ -184,14 +177,7 @@ export const DEFAULT_SCHEDULES: Record<'grade1_2' | 'grade3', GradeSchedule> = {
         { id: 'g3-thu-7', periodNumber: 7, startTime: '12:20', endTime: '13:00', subject: 'Tazkiyah', teacher: 'Ust Rusydan', type: 'lesson' },
         { id: 'g3-thu-l', periodNumber: null, startTime: '12:30', endTime: '13:00', subject: 'HAVE A LUNCH (Makan Siang)', teacher: 'Dapur Santri', type: 'lunch' },
       ],
-      JUMAT: [
-        { id: 'g3-fri-1', periodNumber: 1, startTime: '05:45', endTime: '07:00', subject: "Kajian Fiqih & Sunnah Jum'at", teacher: 'Ust Azzam', type: 'activity' },
-        { id: 'g3-fri-2', periodNumber: 2, startTime: '07:30', endTime: '09:00', subject: "Ro'an / Kerja Bakti Kebersihan", teacher: 'Pembina Asrama', type: 'activity' },
-        { id: 'g3-fri-b', periodNumber: null, startTime: '09:00', endTime: '10:30', subject: 'Persiapan Diri & Tilawah Surah Al-Kahf', teacher: 'Mandiri', type: 'break' },
-        { id: 'g3-fri-p', periodNumber: null, startTime: '11:30', endTime: '12:45', subject: "SHOLAT JUM'AT BERJAMAAH", teacher: 'Khatib & Imam', type: 'prayer' },
-        { id: 'g3-fri-l', periodNumber: null, startTime: '12:45', endTime: '13:30', subject: 'Makan Siang Bersama (Ghaffar)', teacher: 'Dapur Santri', type: 'lunch' },
-        { id: 'g3-fri-3', periodNumber: 3, startTime: '16:00', endTime: '17:15', subject: "Halaqah Qur'an & Doa Sore", teacher: 'Asatidz', type: 'activity' },
-      ],
+      JUMAT: [],
       SABTU: [
         { id: 'g3-sat-1', periodNumber: 1, startTime: '07:30', endTime: '08:10', subject: 'IPA', teacher: 'Haryadi, S.Pd', type: 'lesson' },
         { id: 'g3-sat-2', periodNumber: 2, startTime: '08:10', endTime: '08:50', subject: 'IPA', teacher: 'Haryadi, S.Pd', type: 'lesson' },

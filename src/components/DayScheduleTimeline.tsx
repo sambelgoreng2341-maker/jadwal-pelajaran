@@ -11,7 +11,7 @@ interface DayScheduleTimelineProps {
   showDayTabs?: boolean;
 }
 
-const DAYS_LIST: DayOfWeek[] = ['SENIN', 'SELASA', 'RABU', 'KAMIS', 'SABTU', 'JUMAT', 'AHAD'];
+const DAYS_LIST: DayOfWeek[] = ['SENIN', 'SELASA', 'RABU', 'KAMIS', 'SABTU'];
 
 export const DayScheduleTimeline: React.FC<DayScheduleTimelineProps> = ({
   lessons,

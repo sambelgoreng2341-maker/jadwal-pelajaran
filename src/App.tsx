@@ -16,7 +16,7 @@ import { DEFAULT_SCHEDULES } from './data/defaultSchedule';
 import { Columns2, LayoutGrid, ListFilter } from 'lucide-react';
 
 const STORAGE_CLEAN_MODE = 'iiqbs_clean_mode_v1';
-const DAYS_LIST: DayOfWeek[] = ['SENIN', 'SELASA', 'RABU', 'KAMIS', 'SABTU', 'JUMAT', 'AHAD'];
+const DAYS_LIST: DayOfWeek[] = ['SENIN', 'SELASA', 'RABU', 'KAMIS', 'SABTU'];
 
 export default function App() {
   const {
@@ -81,12 +81,12 @@ export default function App() {
   const getTodayDayOfWeek = (): DayOfWeek => {
     const day = new Date().getDay();
     const map: Record<number, DayOfWeek> = {
-      0: 'AHAD',
+      0: 'SENIN',
       1: 'SENIN',
       2: 'SELASA',
       3: 'RABU',
       4: 'KAMIS',
-      5: 'JUMAT',
+      5: 'SABTU', // Jumat libur -> arahkan ke jadwal Sabtu
       6: 'SABTU',
     };
     return map[day] || 'SENIN';

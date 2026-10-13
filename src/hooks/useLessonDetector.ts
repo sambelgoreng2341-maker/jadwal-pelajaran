@@ -24,12 +24,12 @@ export interface LessonDetectorResult {
 }
 
 const INDONESIAN_DAYS: Record<number, DayOfWeek> = {
-  0: 'AHAD',
+  0: 'SENIN',
   1: 'SENIN',
   2: 'SELASA',
   3: 'RABU',
   4: 'KAMIS',
-  5: 'JUMAT',
+  5: 'SABTU',
   6: 'SABTU',
 };
 
