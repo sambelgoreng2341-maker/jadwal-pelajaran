@@ -77,6 +77,7 @@ export function useLessonDetector(
   const activeDay = overrideDay || actualDayOfWeek;
 
   const todayLessons = useMemo(() => {
+    if (!activeGradeSchedule || !activeGradeSchedule.schedule) return [];
     return activeGradeSchedule.schedule[activeDay] || [];
   }, [activeGradeSchedule, activeDay]);
 

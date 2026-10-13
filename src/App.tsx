@@ -12,6 +12,7 @@ import { TransitionAlertBanner } from './components/TransitionAlertBanner';
 import { AdminScheduleModal } from './components/AdminScheduleModal';
 import { AnnouncementsDrawer } from './components/AnnouncementsDrawer';
 import { DayOfWeek, GradeId } from './types/schedule';
+import { DEFAULT_SCHEDULES } from './data/defaultSchedule';
 import { Columns2, LayoutGrid, ListFilter } from 'lucide-react';
 
 const STORAGE_CLEAN_MODE = 'iiqbs_clean_mode_v1';
@@ -94,9 +95,9 @@ export default function App() {
   const actualToday = getTodayDayOfWeek();
   const [selectedDay, setSelectedDay] = useState<DayOfWeek>(actualToday);
 
-  // Schedules for both classes
-  const grade1_2_Schedule = schedules.grade1_2;
-  const grade3_Schedule = schedules.grade3;
+  // Schedules for both classes with rock-solid fallback
+  const grade1_2_Schedule = schedules?.grade1_2 || DEFAULT_SCHEDULES.grade1_2;
+  const grade3_Schedule = schedules?.grade3 || DEFAULT_SCHEDULES.grade3;
 
   // Real-time lesson detectors for both classes
   const detector1_2 = useLessonDetector(grade1_2_Schedule, settings, selectedDay);

@@ -19,15 +19,25 @@ export function useRealtimeSync() {
   const [schedules, setSchedules] = useState<Record<'grade1_2' | 'grade3', GradeSchedule>>(() => {
     try {
       const cached = localStorage.getItem(STORAGE_KEY_SCHEDULES);
-      if (cached) return JSON.parse(cached);
-    } catch {}
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed && parsed.grade1_2 && parsed.grade3 && parsed.grade1_2.schedule && parsed.grade3.schedule) {
+          return parsed;
+        }
+      }
+    } catch (e) {
+      console.warn('LocalStorage schedules parse error:', e);
+    }
     return DEFAULT_SCHEDULES;
   });
 
   const [announcements, setAnnouncements] = useState<Announcement[]>(() => {
     try {
       const cached = localStorage.getItem(STORAGE_KEY_ANNOUNCEMENTS);
-      if (cached) return JSON.parse(cached);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed)) return parsed;
+      }
     } catch {}
     return DEFAULT_ANNOUNCEMENTS;
   });
@@ -35,7 +45,10 @@ export function useRealtimeSync() {
   const [settings, setSettings] = useState<KioskSettings>(() => {
     try {
       const cached = localStorage.getItem(STORAGE_KEY_SETTINGS);
-      if (cached) return JSON.parse(cached);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed && typeof parsed === 'object') return { ...DEFAULT_KIOSK_SETTINGS, ...parsed };
+      }
     } catch {}
     return DEFAULT_KIOSK_SETTINGS;
   });
@@ -59,7 +72,6 @@ export function useRealtimeSync() {
   } | null>(null);
 
   const eventSourceRef = useRef<EventSource | null>(null);
-  const reconnectTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Save to localStorage whenever state changes
   const persistLocally = useCallback((
@@ -91,33 +103,30 @@ export function useRealtimeSync() {
     try {
       setSyncStatus('connecting');
       const res = await fetch('/api/sync');
-      if (!res.ok) throw new Error('Sync failed');
+      if (!res.ok) throw new Error(`Sync HTTP error ${res.status}`);
+
+      // Verify that response is actually JSON and not HTML fallback from Cloudflare Pages / SPA host
+      const contentType = res.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        throw new Error('Static host without backend API (using local storage)');
+      }
+
       const data = await res.json();
 
-      if (data.schedules) {
+      if (data && data.schedules && data.schedules.grade1_2 && data.schedules.grade3) {
         setSchedules(data.schedules);
         if (data.announcements) setAnnouncements(data.announcements);
         if (data.kioskSettings) setSettings(data.kioskSettings);
         if (data.version) setServerVersion(data.version);
         persistLocally(data.schedules, data.announcements || announcements, data.kioskSettings || settings, data.version);
+        setSyncStatus('connected');
+        setIsOnline(true);
+        setLastSyncTime(new Date());
       } else {
-        // Server is fresh: push our local default schedules to server
-        await fetch('/api/sync', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            schedules,
-            announcements,
-            kioskSettings: settings,
-          }),
-        });
+        setSyncStatus('offline');
       }
-
-      setSyncStatus('connected');
-      setIsOnline(true);
-      setLastSyncTime(new Date());
     } catch (err) {
-      console.warn('Sync connection error:', err);
+      // In static deployment (e.g. Cloudflare Pages), /api/sync does not exist; smoothly use local storage
       setSyncStatus('offline');
       setIsOnline(navigator.onLine);
     }
@@ -218,7 +227,6 @@ export function useRealtimeSync() {
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
       if (eventSourceRef.current) eventSourceRef.current.close();
-      if (reconnectTimeoutRef.current) clearTimeout(reconnectTimeoutRef.current);
     };
   }, []);
 
