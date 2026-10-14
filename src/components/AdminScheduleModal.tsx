@@ -6,6 +6,7 @@ import {
   DayOfWeek,
   LessonPeriod,
 } from '../types/schedule';
+import { IQBSLogo } from './IQBSLogo';
 import {
   X,
   Volume2,
@@ -131,12 +132,10 @@ export const AdminScheduleModal: React.FC<AdminScheduleModalProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-950/60">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-600/30 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
-              <Sparkles className="w-5 h-5" />
-            </div>
+            <IQBSLogo className="w-10 h-10" />
             <div>
               <h2 className="text-base sm:text-lg font-bold text-white">
-                Pusat Kendali Jadwal & Kiosk IIQBS
+                Pusat Kendali Jadwal & Kiosk IQBS
               </h2>
               <p className="text-xs text-slate-400">
                 Pengaturan bel otomatis, anti mati layar, pengumuman & simulasi waktu

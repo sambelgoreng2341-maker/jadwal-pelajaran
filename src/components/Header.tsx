@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { SyncStatus } from '../hooks/useRealtimeSync';
 import { getHijriDate } from '../utils/prayerTimes';
+import { IQBSLogo } from './IQBSLogo';
 
 interface HeaderProps {
   currentTimeString: string;
@@ -50,12 +51,10 @@ export const Header: React.FC<HeaderProps> = ({
       <header className="px-6 sm:px-12 py-5 max-w-7xl mx-auto w-full flex items-center justify-between transition-all">
         {/* Left: Simple Institution name */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-serif font-black text-sm">
-            II
-          </div>
+          <IQBSLogo className="w-8 h-8" />
           <div>
             <h1 className="text-sm font-semibold tracking-wide text-white uppercase">
-              IIQBS Timetable
+              IQBS Timetable
             </h1>
             <p className="text-[11px] text-slate-400 font-light">
               Jadwal Harian Santri
@@ -101,13 +100,11 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Brand */}
       <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-start">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-serif font-black text-sm">
-            II
-          </div>
+          <IQBSLogo className="w-10 h-10" />
           <div>
             <div className="flex items-center gap-2">
               <span className="text-sm font-bold text-white tracking-wide">
-                IIQBS
+                IQBS
               </span>
               <span className="text-xs text-slate-400 font-normal">
                 | Jadwal KBM Santri

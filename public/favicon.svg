@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5e298" />
+      <stop offset="35%" stop-color="#dfbc64" />
+      <stop offset="70%" stop-color="#caa34f" />
+      <stop offset="100%" stop-color="#b48834" />
+    </linearGradient>
+    
+    <!-- Emerald Green Gradient -->
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e774f" />
+      <stop offset="50%" stop-color="#095c3c" />
+      <stop offset="100%" stop-color="#05442b" />
+    </linearGradient>
+
+    <!-- Drop Shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <g transform="translate(250, 250)">
+    <!-- 8-POINTED ISLAMIC STAR (RUB EL HIZB) -->
+    <!-- Outer Gold Star Border -->
+    <path d="
+      M 0,-230
+      L 58,-140 L 163,-163 L 140,-58 L 230,0
+      L 140,58 L 163,163 L 58,140 L 0,230
+      L -58,140 L -163,163 L -140,58 L -230,0
+      L -140,-58 L -163,-163 L -58,-140 Z
+    " fill="url(#goldGrad)" filter="url(#shadow)" />
+
+    <!-- Emerald Inner Star -->
+    <path d="
+      M 0,-212
+      L 53,-129 L 150,-150 L 129,-53 L 212,0
+      L 129,53 L 150,150 L 53,129 L 0,212
+      L -53,129 L -150,150 L -129,53 L -212,0
+      L -129,-53 L -150,-150 L -53,-129 Z
+    " fill="url(#emeraldGrad)" />
+
+    <!-- Thin Gold Inner Trim Line -->
+    <path d="
+      M 0,-198
+      L 49,-120 L 140,-140 L 120,-49 L 198,0
+      L 120,49 L 140,140 L 49,120 L 0,198
+      L -49,120 L -140,140 L -120,49 L -198,0
+      L -120,-49 L -140,-140 L -49,-120 Z
+    " fill="none" stroke="url(#goldGrad)" stroke-width="3" opacity="0.85" />
+
+    <!-- TOP CALLIGRAPHIC CRESCENT ARC -->
+    <path d="M -115,-70 C -60,-155 60,-155 115,-70 C 95,-115 -95,-115 -115,-70 Z" fill="url(#goldGrad)" opacity="0.9" />
+    <!-- Calligraphic script dots & accents -->
+    <circle cx="-90" cy="-75" r="3" fill="url(#goldGrad)" />
+    <circle cx="-65" cy="-105" r="3.5" fill="url(#goldGrad)" />
+    <circle cx="-35" cy="-125" r="3.5" fill="url(#goldGrad)" />
+    <circle cx="0" cy="-132" r="4" fill="url(#goldGrad)" />
+    <circle cx="35" cy="-125" r="3.5" fill="url(#goldGrad)" />
+    <circle cx="65" cy="-105" r="3.5" fill="url(#goldGrad)" />
+    <circle cx="90" cy="-75" r="3" fill="url(#goldGrad)" />
+    <path d="M -75,-92 Q -50,-115 -20,-118 Q 0,-122 20,-118 Q 50,-115 75,-92 Q 40,-108 0,-110 Q -40,-108 -75,-92 Z" fill="url(#goldGrad)" />
+
+    <!-- CENTER EMBLEM: PALM TREE -->
+    <!-- Palm Trunk -->
+    <path d="M 28,15 L 34,15 L 36,-65 L 26,-65 Z" fill="url(#goldGrad)" />
+    <!-- Palm Trunk Texture -->
+    <line x1="26" y1="-50" x2="36" y2="-47" stroke="#9e7b28" stroke-width="1.5" />
+    <line x1="27" y1="-35" x2="35" y2="-32" stroke="#9e7b28" stroke-width="1.5" />
+    <line x1="28" y1="-20" x2="35" y2="-17" stroke="#9e7b28" stroke-width="1.5" />
+    <line x1="28" y1="-5" x2="34" y2="-2" stroke="#9e7b28" stroke-width="1.5" />
+
+    <!-- Palm Fronds / Leaves -->
+    <path d="M 31,-65 C 20,-95 -10,-95 -25,-85 C -15,-80 5,-75 28,-65 Z" fill="url(#goldGrad)" />
+    <path d="M 31,-65 C 10,-100 25,-120 15,-125 C 10,-105 20,-85 31,-65 Z" fill="url(#goldGrad)" />
+    <path d="M 31,-65 C 31,-105 45,-125 50,-120 C 45,-100 38,-85 31,-65 Z" fill="url(#goldGrad)" />
+    <path d="M 31,-65 C 50,-100 80,-95 85,-85 C 70,-80 50,-75 31,-65 Z" fill="url(#goldGrad)" />
+    <path d="M 31,-65 C 55,-85 85,-65 92,-50 C 75,-55 52,-60 31,-65 Z" fill="url(#goldGrad)" />
+    <path d="M 31,-65 C 15,-80 -15,-65 -22,-50 C -5,-55 12,-60 31,-65 Z" fill="url(#goldGrad)" />
+
+    <!-- THE HOLY KA'BAH (left of palm tree) -->
+    <!-- Ka'bah Body with 3D perspective -->
+    <polygon points="-75,10 -15,10 -15,-45 -75,-45" fill="url(#goldGrad)" />
+    <polygon points="-15,10 0,2 0,-50 -15,-45" fill="#caa34f" />
+    <!-- Kiswah Gold Band -->
+    <line x1="-75" y1="-32" x2="-15" y2="-32" stroke="#684a14" stroke-width="2.5" />
+    <line x1="-15" y1="-32" x2="0" y2="-37" stroke="#52390d" stroke-width="2.5" />
+    <!-- Ka'bah Door (Bab ar-Rahmah) -->
+    <rect x="-42" y="-20" width="12" height="30" rx="1.5" fill="#684a14" />
+    <rect x="-40" y="-18" width="8" height="26" rx="1" fill="#dfbc64" />
+
+    <!-- OPEN QURAN ON REHAL (BASE) -->
+    <!-- Open Book Pages -->
+    <path d="
+      M 0,4
+      C -30,-8 -75,-8 -115,10
+      C -85,28 -40,25 0,16
+      C 40,25 85,28 115,10
+      C 75,-8 30,-8 0,4 Z
+    " fill="url(#goldGrad)" />
+    
+    <!-- Quran Book Center Spine -->
+    <line x1="0" y1="4" x2="0" y2="16" stroke="#9e7b28" stroke-width="3" />
+    <!-- Book Page Lines -->
+    <path d="M -95,11 C -65,-2 -30,0 -8,9" fill="none" stroke="#7a5813" stroke-width="1.5" opacity="0.6" />
+    <path d="M 95,11 C 65,-2 30,0 8,9" fill="none" stroke="#7a5813" stroke-width="1.5" opacity="0.6" />
+
+    <!-- Rehal (Wooden Stand) Crossed Legs -->
+    <path d="
+      M -75,20 L 70,68 L 50,75 L -95,27 Z
+    " fill="url(#goldGrad)" />
+    <path d="
+      M 75,20 L -70,68 L -50,75 L 95,27 Z
+    " fill="#b9903b" />
+    <!-- Rehal bottom feet notches -->
+    <polygon points="-90,26 -70,32 -60,24 -80,18" fill="url(#goldGrad)" />
+    <polygon points="90,26 70,32 60,24 80,18" fill="url(#goldGrad)" />
+  </g>
+</svg>
